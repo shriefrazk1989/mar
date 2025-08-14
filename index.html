@@ -1,124 +1,97 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>برنامج كونكت</title>
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-            direction: rtl;
-        }
-
-        header {
-            background-color: #0054a6;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        main h2 {
-            color: #0054a6;
-            font-size: 28px;
-            margin-top: 0;
-        }
-
-        main p {
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .features {
-            background-color: #eef5ff;
-            padding: 15px;
-            margin-top: 20px;
-            border-right: 5px solid #0054a6;
-        }
-
-        .features ul {
-            padding-right: 20px;
-        }
-
-        .features li {
-            font-size: 17px;
-            margin-bottom: 10px;
-        }
-
-        .alert-box {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #ffdddd;
-            border-right: 5px solid red;
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: #990000;
-        }
-
-        .jota-box {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 50px;
-            color: #ff0000;
-            font-weight: bold;
-            letter-spacing: 2px;
-            animation: flash 1s infinite;
-        }
-
-        @keyframes flash {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>كونكت - الموبايلات المفقودة</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
 <header>
-    <h1>برنامج كونكت</h1>
+  <h1><font size="7">كونكت</font></h1>
+  <p class="tag"><b><font size="5">منصة الإبلاغ عن الموبايلات المفقودة في مصر — ساعد في استرجاع المقتنيات بسهولة وسرية</font></b></p>
 </header>
 
-<main>
-    <h2>وصف البرنامج</h2>
-    <p>
-        هذه الصفحة تخص <strong>برنامج كونكت</strong> لإنشاء وطباعه كروت الهوتسبوت واليوزرمانجر، وطباعه يوزرات ريدوس واليوزرات الخارجيه. البرنامج مصمم خصيصًا لتقديم حلول متقدمة ومتكاملة لإدارة شبكات الإنترنت المعتمدة على ميكروتيك والأنظمة الأخرى.
-    </p>
+<main class="container">
+  <section class="intro">
+    <h2>أبلغ عن موبايل مفقود</h2>
+    <p>استخدم النموذج أدناه لتسجيل بيانات الموبايل المفقود. سيتم حفظ البيانات محليًا في متصفحك (يمكنك لاحقًا ربطها بخادم إذا رغبت).</p>
+  </section>
 
-    <div class="features">
-        <h3>مميزات البرنامج:</h3>
-        <ul>
-            <li>تصميم بطاقات hotspot جاهزة للطباعة</li>
-            <li>إدارة يوزرات اليوزرمانجر بسهولة</li>
-            <li>دعم طباعة يوزرات Redus</li>
-            <li>استيراد وتصدير البيانات من ملفات Excel وPDF</li>
-            <li>واجهة عربية سهلة الاستخدام</li>
-            <li>دعم النظام تلقائيًا بدون تدخل المستخدم</li>
-            <li>إمكانية إنشاء آلاف المستخدمين دفعة واحدة</li>
-        </ul>
-    </div>
+  <section class="form-section">
+    <form id="reportForm">
+      <div class="row">
+        <label>اسم الموبايل</label>
+        <input type="text" id="phoneName" required placeholder="مثال: Samsung Galaxy S21">
+      </div>
+      <div class="row">
+        <label>لون الموبايل</label>
+        <input type="text" id="phoneColor" placeholder="مثال: أسود">
+      </div>
+      <div class="row">
+        <label>صورة الموبايل أو العلبة (اختياري)</label>
+        <input type="file" id="phoneImage" accept="image/*">
+      </div>
+      <div class="row">
+        <label>رقم للتواصل</label>
+        <input type="text" id="contactNumber" placeholder="مثال: 01XXXXXXXXX">
+      </div>
+      <div class="row">
+        <label>اسم صاحب الموبايل</label>
+        <input type="text" id="ownerName" placeholder="اسم صاحب الموبايل">
+      </div>
+      <div class="row">
+        <label>تاريخ الفقد</label>
+        <input type="date" id="lostDate" required>
+      </div>
+      <div class="row">
+        <label>مكان الفقد</label>
+        <input type="text" id="lostPlace" placeholder="مثال: ميدان التحرير، القاهرة">
+      </div>
 
-    <div class="jota-box">
-        <font style="font-size: 60pt">خطا 404 </font>
-    </div>
+      <div class="buttons">
+        <button type="submit" id="saveBtn" class="btn primary">تسجيل</button>
+        <button type="button" id="clearBtn" class="btn">مسح الحقول</button>
+      </div>
+    </form>
+  </section>
 
-    <div class="alert-box">
-        ⚠️ هذه النسخة ليس لها تحديثات ولا دعم فني
+  <section class="search-section">
+    <h3>بحث</h3>
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="ابحث باسم الموبايل أو اسم العميل أو رقم الموبايل">
+      <button id="searchBtn" class="btn">بحث</button>
+      <button id="showAllBtn" class="btn">عرض الكل</button>
     </div>
+  </section>
+
+  <section class="table-section">
+    <h3>قائمة الموبايلات المفقودة</h3>
+    <div class="table-wrap">
+      <table id="phonesTable">
+        <thead>
+          <tr>
+            <th>صورة</th>
+            <th>اسم الموبايل</th>
+            <th>اللون</th>
+            <th>اسم العميل</th>
+            <th>رقم التواصل</th>
+            <th>تاريخ الفقد</th>
+            <th>مكان الفقد</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
 </main>
 
+<footer>
+  <p align="center"><b>تصميم وتطوير المهندس : شريف رزف</b></p>
+    <p align="center"><b>© جميع الحقوق محفوظة لـ كونكت — منصة الموبايلات المفقودة في مصر</b></p>
+
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
